@@ -1,7 +1,8 @@
-import "../App.css";
+//import "../App.css";
 import Topics from "../features/topics/Topics";
 import Articles from "../features/articles/Articles";
 import { ArticleContent } from "../features/articles/ArticleContent";
+import { AddArticle } from "../features/articles/AddArticle";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App() {
@@ -30,6 +31,12 @@ function App() {
 						path="/contact"
 						element={
 							<Contact />
+						}
+					/>
+					<Route
+						path="/addArticle"
+						element={
+							<AddArticle />
 						}
 					/>
 					<Route

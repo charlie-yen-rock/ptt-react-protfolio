@@ -7,6 +7,10 @@ export default function Articles(props) {
 	return (
 		<div className="bg">
 			<h1>articles</h1>
+			<Link to="/addArticle">
+				<h2>新增文章</h2>
+			</Link>
+
 			{articles[topicName].map((article, index) => (
 				<Link
 					to={`/${topicName}/${article.id}`}
@@ -34,4 +38,3 @@ export default function Articles(props) {
 		</div>
 	);
 }
-//
