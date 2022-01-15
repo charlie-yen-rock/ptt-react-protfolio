@@ -8,38 +8,47 @@ export default function Topics(props) {
 	return (
 		<div className="topics">
 			<h1>熱門看板</h1>
-			{topics.map((topic, index) => (
-				<Link to={`/${topic.name}`} key={index}>
-					<div className="topic">
-						<p>{topic.name}</p>
-						<p>
-							{
-								articles[
-									topic
-										.name
-								]
-									.length
-							}
-						</p>
-						<p>
-							{
-								articles[
-									topic
-										.name
-								][
+			<div className="titleGroup">
+				{topics.map((topic, index) => (
+					<Link
+						to={`/${topic.name}`}
+						key={index}
+					>
+						<div className="topic">
+							<p className="topicName">
+								{
+									topic.name
+								}
+							</p>
+							<p className="number">
+								{
 									articles[
 										topic
 											.name
 									]
-										.length -
-										1
-								]
-									.title
-							}
-						</p>
-					</div>
-				</Link>
-			))}
+										.length
+								}
+							</p>
+							<p className="title">
+								{
+									articles[
+										topic
+											.name
+									][
+										articles[
+											topic
+												.name
+										]
+											.length -
+											1
+									]
+										.title
+								}
+							</p>
+						</div>
+					</Link>
+				))}
+			</div>
 		</div>
 	);
 }

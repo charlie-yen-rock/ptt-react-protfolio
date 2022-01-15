@@ -1,38 +1,65 @@
-.App {
-  text-align: center;
+* {
+	font-family: sans-serif;
+	font-size: 20px;
+	background-color: #000;
+	color: white;
+}
+.nav * {
+	background-color: #0c0a66;
+}
+.nav ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	list-style-type: none;
+	padding: 4px 0;
+	margin: 0 auto;
+}
+.nav a {
+	text-decoration: none;
+	color: #888;
+	padding: 0 12px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav #logo a {
+	color: #ffff66;
+	font-size: 24px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.topics h1 {
+	background-color: #bbb;
+	color: #000;
+	display: inline-block;
+	padding: 10px 14px;
+	margin-top: 0;
+	font-size: 16px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.titleGroup * {
+	text-decoration: none;
+	font-size: 20px;
+}
+.titleGroup {
+	padding-top: 16px;
+}
+.topic {
+	display: flex;
+	flex-direction: row;
+	align-items: end;
+	height: 36px;
 }
 
-.App-link {
-  color: #61dafb;
+.topic .topicName {
+	width: 173px;
+	color: #888;
+}
+.topic .number {
+	padding: 0 24px 0 0;
+	text-align: right;
+	color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.topic .title {
+	color: #888;
 }

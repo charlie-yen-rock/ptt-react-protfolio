@@ -1,4 +1,4 @@
-//import "../App.css";
+import "../App.css";
 import Topics from "../features/topics/Topics";
 import Articles from "../features/articles/Articles";
 import { ArticleContent } from "../features/articles/ArticleContent";
@@ -9,19 +9,20 @@ function App() {
 	return (
 		<Router>
 			<div>
-				<ul>
-					<li>
-						<Link to="/">
-							批踢踢實業坊React範本
-						</Link>
-					</li>
-					<li>
-						<Link to="/contact">
-							聯絡資訊
-						</Link>
-					</li>
-				</ul>
-
+				<div className="nav">
+					<ul>
+						<li id="logo">
+							<Link to="/">
+								批踢踢實業坊React範本
+							</Link>
+						</li>
+						<li>
+							<Link to="/contact">
+								聯絡資訊
+							</Link>
+						</li>
+					</ul>
+				</div>
 				<Routes>
 					<Route
 						path="/"
@@ -59,7 +60,7 @@ function App() {
 
 function Contact() {
 	return (
-		<div>
+		<div className="contact">
 			<p>這是聯絡資訊</p>
 		</div>
 	);
