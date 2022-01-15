@@ -1,14 +1,13 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectTopics } from "../topics/topicsSlice";
 import Select from "react-select";
 import { addArticle, selectArticles } from "./articlesSlice";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 export function AddArticle() {
 	const [category, setCategory] = useState();
 	const [author, setAuthor] = useState();
 	const [title, setTitle] = useState();
-	const [time, setTime] = useState();
 	const [content, setContent] = useState();
 	const topics = useSelector(selectTopics);
 	const topicOpt = topics.map((topic) => ({
@@ -17,9 +16,7 @@ export function AddArticle() {
 	}));
 	const articles = useSelector(selectArticles);
 	const dispatch = useDispatch();
-	useEffect(() => {
-		setTime(currenttime());
-	}, []);
+
 	const navigate = useNavigate();
 
 	const handleClick = () => {
@@ -31,7 +28,7 @@ export function AddArticle() {
 				id: id,
 				author: author,
 				title: title,
-				time: time,
+				time: currenttime(),
 				content: content,
 				replys: [],
 			};
@@ -42,7 +39,7 @@ export function AddArticle() {
 				})
 			);
 			navigate(`/${category}`);
-			//resetState();
+			resetState();
 		} else {
 			alert("請輸入所有欄位");
 		}
@@ -70,7 +67,6 @@ export function AddArticle() {
 		setAuthor();
 		setTitle();
 		setContent();
-		setTime();
 	};
 	return (
 		<div>

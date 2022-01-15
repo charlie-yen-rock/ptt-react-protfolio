@@ -97,34 +97,18 @@ export const articlesSlice = createSlice({
 	},
 	reducers: {
 		addArticle(state, action) {
-			console.log(state["articles"]["Gossiping"]);
 			state["articles"][action.payload.category].push(
 				action.payload.addContent
 			);
-			//state["articles"][action.payload.category]型態為array，用push新增
-			/*return {
-				
-				articles: {
-					...state.articles,
-					[action.payload.category]: [
-						...state.articles[
-							action
-								.payload
-								.category
-						],
-						{
-							...action
-								.payload
-								.addContent,
-						},
-					],
-				},
-				
-			};*/
+		},
+		addReply(state, action) {
+			state["articles"][action.payload.category][
+				action.payload.contentId
+			].replys.push(action.payload.newReply);
 		},
 	},
 });
 
 export const selectArticles = (state) => state.articles.articles;
-export const { addArticle } = articlesSlice.actions; //需搭配react-redux的useDispatch使用
+export const { addArticle, addReply } = articlesSlice.actions; //需搭配react-redux的useDispatch使用
 export default articlesSlice.reducer;
