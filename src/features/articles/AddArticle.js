@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectTopics } from "../topics/topicsSlice";
 import Select from "react-select";
-import { addArticle, selectAtticles } from "./articlesSlice";
+import { addArticle, selectArticles } from "./articlesSlice";
 import { Link, useNavigate } from "react-router-dom";
 export function AddArticle() {
 	const [category, setCategory] = useState();
@@ -15,7 +15,7 @@ export function AddArticle() {
 		value: topic.name,
 		label: topic.name,
 	}));
-	const articles = useSelector(selectAtticles);
+	const articles = useSelector(selectArticles);
 	const dispatch = useDispatch();
 	useEffect(() => {
 		setTime(currenttime());

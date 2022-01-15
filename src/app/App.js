@@ -12,7 +12,7 @@ function App() {
 				<ul>
 					<li>
 						<Link to="/">
-							ptt
+							批踢踢實業坊React範本
 						</Link>
 					</li>
 					<li>
@@ -60,7 +60,7 @@ function App() {
 function Contact() {
 	return (
 		<div>
-			<h1>這是聯絡資訊</h1>
+			<p>這是聯絡資訊</p>
 		</div>
 	);
 }

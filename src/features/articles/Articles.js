@@ -1,15 +1,15 @@
 import { Link, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectAtticles } from "./articlesSlice";
+import { selectArticles } from "./articlesSlice";
 export default function Articles(props) {
 	const { topicName } = useParams(); //useParams會讀取App,js route的path="/:topicName"，該topicName url值是多少並以obj回傳
-	const articles = useSelector(selectAtticles);
+	const articles = useSelector(selectArticles);
 
 	return (
 		<div className="bg">
-			<h1>articles</h1>
+			<h1>{topicName}</h1>
 			<Link to="/addArticle">
-				<h2>新增文章</h2>
+				<button>新增文章</button>
 			</Link>
 			{/*為使文章id最後者render在最前面，在此創造articles[topicName]的shallow copy，避免原物件被改變，並用該copy.reverse來依序render，故呈現如下
 			[...articles[topicName]].reverse().map*/}
@@ -21,11 +21,11 @@ export default function Articles(props) {
 						key={index}
 					>
 						<div className="article">
-							<h2>
+							<p>
 								{
 									article.title
 								}
-							</h2>
+							</p>
 							<p>
 								{
 									article.time

@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectAtticles } from "./articlesSlice";
+import { selectArticles } from "./articlesSlice";
 
 export function ArticleContent(props) {
 	const { topicName, id } = useParams();
-	const articles = useSelector(selectAtticles);
+	const articles = useSelector(selectArticles);
 	const content = articles[topicName][id - 1];
 	return (
 		<div className="article">
