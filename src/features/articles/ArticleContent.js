@@ -43,7 +43,7 @@ export function ArticleContent(props) {
 			currentdate.getMonth() +
 			1 +
 			"/" +
-			currentdate.getDay() +
+			currentdate.getDate() +
 			" " +
 			currentdate.getHours() +
 			":" +
@@ -58,38 +58,51 @@ export function ArticleContent(props) {
 		<div className="articleContent">
 			<div className="title">
 				<div className="titleBar">
-					<p>作者</p>
+					<p className="head">作者</p>
 					<p>{content.author}</p>
 				</div>
 				<div className="titleBar">
-					<p>標題</p>
+					<p className="head">標題</p>
 					<p>{content.title}</p>
 				</div>
 				<div className="titleBar">
-					<p>時間</p>
+					<p className="head">時間</p>
 					<p>{content.time}</p>
 				</div>
 			</div>
 			<div className="content">
-				<p>{content.content}</p>
+				{/*\r為回車字元，\n為換行字元，由於不同作業系統都可能用到，故regex寫法如下*/}
+				{content.content
+					.split(/\r\n|\n|\r/gm)
+					.map((line, index) => (
+						<p key={index}>
+							{line}
+						</p>
+					))}
 			</div>
 			<div className="replys">
+				<p>__</p>
 				{content.replys.map((reply, index) => (
 					<div
 						className="reply"
 						key={index}
 					>
-						<p>
+						<p className="replyAuthor">
 							{
 								reply.author
 							}
+							:
 						</p>
-						<p>
+						<p className="replyContent">
 							{
 								reply.content
 							}
 						</p>
-						<p>{reply.time}</p>
+						<p className="replyTime">
+							{
+								reply.time
+							}
+						</p>
 					</div>
 				))}
 

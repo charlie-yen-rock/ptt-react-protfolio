@@ -4,6 +4,11 @@
 	background-color: #000;
 	color: white;
 }
+/*nav*/
+.nav {
+	width: 100%;
+	background-color: #0c0a66;
+}
 .nav * {
 	background-color: #0c0a66;
 }
@@ -14,6 +19,9 @@
 	align-items: center;
 	list-style-type: none;
 	padding: 4px 0;
+	/*下述可達成置中，並確保在一定範圍內，所以內容不會壓縮到跑版*/
+	min-width: 600px;
+	max-width: 1200px;
 	margin: 0 auto;
 }
 .nav a {
@@ -25,8 +33,14 @@
 .nav #logo a {
 	color: #ffff66;
 	font-size: 24px;
+	padding-left: 0;
 }
-
+/*topics*/
+.topics {
+	min-width: 600px;
+	max-width: 1200px;
+	margin: 0 auto;
+}
 .topics h1 {
 	background-color: #bbb;
 	color: #000;
@@ -62,4 +76,103 @@
 
 .topic .title {
 	color: #888;
+}
+
+/*articles*/
+.articles {
+	/* padding: 0 8rem; */
+	min-width: 600px;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.articles h1 {
+	font-size: 24px;
+}
+
+.articles button {
+	background-color: #bbb;
+	color: #000;
+	display: inline-block;
+	padding: 10px 14px;
+	margin-top: 0;
+	font-size: 16px;
+}
+
+.articleGroup * {
+	background-color: #111;
+	color: #aaa;
+	text-decoration: none;
+}
+
+.article {
+	margin: 12px 0;
+}
+.article p {
+	padding: 6px 12px;
+	margin: 0;
+}
+
+.article .time,
+.article .author {
+	display: inline-block;
+	margin: 0;
+}
+
+.article .time {
+	float: right;
+}
+
+/*articleContent*/
+.articleContent {
+	min-width: 600px;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+.title {
+	width: 100%;
+}
+.titleBar {
+	background-color: #000088;
+}
+.titleBar p {
+	background-color: #000088;
+	color: #888;
+	padding: 0 10px;
+	/*用display: inline;無法設定高度，會有gap*/
+	display: inline-block;
+	margin: 0;
+}
+.titleBar p.head {
+	background-color: #888;
+	color: #000088;
+}
+
+/*reply*/
+.reply p {
+	display: inline-block;
+	margin: 0;
+}
+.reply .replyAuthor {
+	color: #ffff66;
+}
+.reply .replyContent {
+	color: #999900;
+}
+.reply .replyTime {
+	color: #bbb;
+	float: right;
+}
+.form {
+	min-width: 600px;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+.form * {
+	display: block;
+}
+.form input,
+.form textarea {
+	background-color: white;
+	color: black;
 }

@@ -50,7 +50,7 @@ export function AddArticle() {
 			currentdate.getMonth() +
 			1 +
 			"/" +
-			currentdate.getDay() +
+			currentdate.getDate() +
 			" " +
 			currentdate.getHours() +
 			":" +
@@ -69,7 +69,7 @@ export function AddArticle() {
 		setContent();
 	};
 	return (
-		<div>
+		<div className="form">
 			<label htmlFor="category">文章類型</label>
 			<Select
 				onChange={(category) =>
@@ -102,7 +102,10 @@ export function AddArticle() {
 			/>
 
 			<label htmlFor="content">內文</label>
-			<input
+
+			<textarea
+				rows="5"
+				cols="60"
 				id="content"
 				onChange={(e) =>
 					setContent(
@@ -110,8 +113,9 @@ export function AddArticle() {
 							.value
 					)
 				}
-			/>
-
+			>
+				Enter details here...
+			</textarea>
 			<button onClick={handleClick}>送出</button>
 		</div>
 	);
