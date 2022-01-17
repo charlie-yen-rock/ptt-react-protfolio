@@ -105,29 +105,32 @@ export function ArticleContent(props) {
 						</p>
 					</div>
 				))}
+				<di className="addReply">
+					<input
+						placeholder="使用者名稱"
+						onChange={(e) => {
+							setReplyAuthor(
+								e
+									.target
+									.value
+							);
+						}}
+					/>
 
-				<input
-					placeholder="使用者名稱"
-					onChange={(e) => {
-						setReplyAuthor(
-							e.target
-								.value
-						);
-					}}
-				/>
-
-				<input
-					placeholder="回覆內容"
-					onChange={(e) => {
-						setReplyConent(
-							e.target
-								.value
-						);
-					}}
-				/>
-				<button onClick={handleClick}>
-					送出
-				</button>
+					<input
+						placeholder="回覆內容"
+						onChange={(e) => {
+							setReplyConent(
+								e
+									.target
+									.value
+							);
+						}}
+					/>
+					<button onClick={handleClick}>
+						送出
+					</button>
+				</di>
 			</div>
 		</div>
 	);
