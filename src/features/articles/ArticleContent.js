@@ -105,7 +105,7 @@ export function ArticleContent(props) {
 						</p>
 					</div>
 				))}
-				<di className="addReply">
+				<div className="addReply">
 					<input
 						placeholder="使用者名稱"
 						onChange={(e) => {
@@ -130,7 +130,7 @@ export function ArticleContent(props) {
 					<button onClick={handleClick}>
 						送出
 					</button>
-				</di>
+				</div>
 			</div>
 		</div>
 	);

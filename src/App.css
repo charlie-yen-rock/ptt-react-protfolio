@@ -22,7 +22,7 @@ body {
 	list-style-type: none;
 	padding: 4px 0;
 	/*下述可達成置中，並確保在一定範圍內，所以內容不會壓縮到跑版*/
-	min-width: 600px;
+	min-width: 800px;
 	max-width: 1200px;
 	margin: 0 auto;
 }
@@ -39,7 +39,7 @@ body {
 }
 /*topics*/
 .topics {
-	min-width: 600px;
+	min-width: 800px;
 	max-width: 1200px;
 	margin: 0 auto;
 }
@@ -54,20 +54,20 @@ body {
 
 .titleGroup * {
 	text-decoration: none;
-	font-size: 20px;
 }
 .titleGroup {
 	padding-top: 16px;
 }
 .topic {
-	display: flex;
-	flex-direction: row;
-	align-items: end;
-	height: 36px;
+	padding: 0 6px;
 }
-
+.topic p {
+	display: inline-block;
+	height: 36px;
+	margin: 0 auto;
+}
 .topic .topicName {
-	width: 173px;
+	width: 240px;
 	color: #888;
 }
 .topic .number {
@@ -78,12 +78,13 @@ body {
 
 .topic .title {
 	color: #888;
+	width: 500px;
 }
 
 /*articles*/
 .articles {
 	/* padding: 0 8rem; */
-	min-width: 600px;
+	min-width: 800px;
 	max-width: 1200px;
 	margin: 0 auto;
 }
@@ -127,7 +128,7 @@ body {
 
 /*articleContent*/
 .articleContent {
-	min-width: 600px;
+	min-width: 800px;
 	max-width: 1200px;
 	margin: 0 auto;
 }
@@ -185,6 +186,7 @@ body {
 	resize: none;
 	width: 100%;
 }
+/*.form select 以inline style寫*/
 .addReply input,
 .addReply button {
 	background-color: #bbb;
@@ -199,4 +201,72 @@ body {
 }
 .addReply ::placeholder {
 	color: #000;
+}
+
+@media only screen and (max-width: 800px) {
+	* {
+		font-size: 16px;
+	}
+	/*nav*/
+	.nav ul {
+		min-width: 400px;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+	.nav #logo a {
+		font-size: 16px;
+	}
+	/*topics*/
+	.topics {
+		min-width: 400px;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+	.titleGroup {
+		padding-top: 0px;
+	}
+	.topic {
+		border-bottom: 1px solid #888;
+		padding: 6px 8px 6px 4px;
+	}
+	.topic p {
+		height: 24px;
+	}
+	.topic .topicName {
+		width: auto;
+	}
+	.topic .number {
+		float: right;
+	}
+	.topic .title {
+		display: block;
+		width: auto;
+	}
+	/*articles */
+	.articles {
+		min-width: 400px;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+	.articles h1 {
+		font-size: 20px;
+	}
+	.articleGroup * {
+		background-color: #000;
+	}
+	.article {
+		border-bottom: 1px solid #888;
+		padding: 6px 8px 6px 4px;
+		margin: 0%;
+	}
+	.article p {
+		height: 24px;
+		padding: 0;
+	}
+	/*articleConten*/
+	.articleContent {
+		min-width: 400px;
+		max-width: 800px;
+		margin: 0 auto;
+	}
 }
