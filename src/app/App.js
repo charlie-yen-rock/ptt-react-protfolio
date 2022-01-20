@@ -3,7 +3,7 @@ import Topics from "../features/topics/Topics";
 import Articles from "../features/articles/Articles";
 import { ArticleContent } from "../features/articles/ArticleContent";
 import { AddArticle } from "../features/articles/AddArticle";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App() {
 	return (
