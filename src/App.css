@@ -152,6 +152,10 @@ body {
 }
 
 /*reply*/
+.reply {
+	display: block;
+	margin: 0;
+}
 .reply p {
 	display: inline-block;
 	margin: 0;
@@ -166,6 +170,11 @@ body {
 	color: #bbb;
 	float: right;
 }
+.addReply {
+	display: block;
+	padding-top: 16px;
+}
+/*form*/
 .form {
 	width: 600px;
 	margin: 0 auto;
@@ -181,10 +190,12 @@ body {
 }
 .form input {
 	width: 100%;
+	box-sizing: border-box;
 }
 .form textarea {
 	resize: none;
 	width: 100%;
+	box-sizing: border-box;
 }
 /*.form select 以inline style寫*/
 .addReply input,
@@ -209,7 +220,7 @@ body {
 	}
 	/*nav*/
 	.nav ul {
-		min-width: 400px;
+		min-width: 300px;
 		max-width: 800px;
 		margin: 0 auto;
 	}
@@ -218,7 +229,7 @@ body {
 	}
 	/*topics*/
 	.topics {
-		min-width: 400px;
+		min-width: 300px;
 		max-width: 800px;
 		margin: 0 auto;
 	}
@@ -244,7 +255,7 @@ body {
 	}
 	/*articles */
 	.articles {
-		min-width: 400px;
+		min-width: 300px;
 		max-width: 800px;
 		margin: 0 auto;
 	}
@@ -265,8 +276,13 @@ body {
 	}
 	/*articleConten*/
 	.articleContent {
-		min-width: 400px;
+		min-width: 300px;
 		max-width: 800px;
 		margin: 0 auto;
+	}
+	.form {
+		width: auto;
+		min-width: 300px;
+		max-width: 800px;
 	}
 }
